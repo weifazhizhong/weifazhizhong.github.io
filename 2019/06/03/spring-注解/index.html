@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="spring,">
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="杂鱼的自嗨">
-<meta property="og:type" content="website">
-<meta property="og:title" content="未发之中">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="Spring Core Annotations@Autowired以下三种写法，其效果是一样，实际使用哪个看个人喜好  Constructor injection12345678class Car &amp;#123;    Engine engine;     @Autowired    Car(Engine engine) &amp;#123;        this.engine = engine;">
+<meta name="keywords" content="spring">
+<meta property="og:type" content="article">
+<meta property="og:title" content="spring 注解">
+<meta property="og:url" content="http://yoursite.com/2019/06/03/spring-注解/index.html">
 <meta property="og:site_name" content="未发之中">
-<meta property="og:description" content="杂鱼的自嗨">
+<meta property="og:description" content="Spring Core Annotations@Autowired以下三种写法，其效果是一样，实际使用哪个看个人喜好  Constructor injection12345678class Car &amp;#123;    Engine engine;     @Autowired    Car(Engine engine) &amp;#123;        this.engine = engine;">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-06-04T16:03:31.682Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="未发之中">
-<meta name="twitter:description" content="杂鱼的自嗨">
+<meta name="twitter:title" content="spring 注解">
+<meta name="twitter:description" content="Spring Core Annotations@Autowired以下三种写法，其效果是一样，实际使用哪个看个人喜好  Constructor injection12345678class Car &amp;#123;    Engine engine;     @Autowired    Car(Engine engine) &amp;#123;        this.engine = engine;">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/03/spring-注解/">
 
 
 
 
 
-  <title>未发之中</title>
+  <title>spring 注解 | 未发之中</title>
   
 
 
@@ -143,8 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -227,9 +228,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -259,9 +260,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/06/03/spring-注解/" itemprop="url">spring 注解</a></h1>
+          <h1 class="post-title" itemprop="name headline">spring 注解</h1>
         
 
         <div class="post-meta">
@@ -311,9 +310,7 @@
       
 
       
-        
-          
-            <h4 id="Spring-Core-Annotations"><a href="#Spring-Core-Annotations" class="headerlink" title="Spring Core Annotations"></a>Spring Core Annotations</h4><h5 id="Autowired"><a href="#Autowired" class="headerlink" title="@Autowired"></a>@Autowired</h5><p>以下三种写法，其效果是一样，实际使用哪个看个人喜好</p>
+        <h4 id="Spring-Core-Annotations"><a href="#Spring-Core-Annotations" class="headerlink" title="Spring Core Annotations"></a>Spring Core Annotations</h4><h5 id="Autowired"><a href="#Autowired" class="headerlink" title="@Autowired"></a>@Autowired</h5><p>以下三种写法，其效果是一样，实际使用哪个看个人喜好</p>
 <ul>
 <li><h6 id="Constructor-injection"><a href="#Constructor-injection" class="headerlink" title="Constructor injection"></a>Constructor injection</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123;</span><br><span class="line">    Engine engine;</span><br><span class="line"> </span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    Car(Engine engine) &#123;</span><br><span class="line">        <span class="keyword">this</span>.engine = engine;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
@@ -364,8 +361,6 @@
 <h5 id="DependsOn"><a href="#DependsOn" class="headerlink" title="@DependsOn"></a>@DependsOn</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean</span>(initMethod = <span class="string">"initialize"</span>)</span><br><span class="line"><span class="meta">@DependsOn</span>(<span class="string">"eventListener"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> EventPublisherBean <span class="title">eventPublisherBean</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> EventPublisherBean();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Bean</span>(name = <span class="string">"eventListener"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> EventListenerBean <span class="title">eventListenerBean</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> EventListenerBean();</span><br><span class="line">&#125;</span><br><span class="line">控制bean加载顺序,当eventListener初始化后，eventListener才能初始化，当然也可以在eventListenerBean方法上增加<span class="meta">@Lazy</span>可以达到同样效果。</span><br></pre></td></tr></table></figure>
 
 
-          
-        
       
     </div>
     
@@ -380,170 +375,36 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/03/生成我的博客/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="刘驭">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="未发之中">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/06/03/生成我的博客/" itemprop="url">生成我的博客</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-03T22:03:05+08:00">
-                2019-06-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/spring/" rel="tag"># spring</a>
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><strong>简单的写下建立博客的流程</strong></p>
-<h5 id="GitHub准备工作"><a href="#GitHub准备工作" class="headerlink" title="GitHub准备工作"></a>GitHub准备工作</h5><ol>
-<li><p>GitHub创建新项目</p>
-<p>create new repository -&gt;repository name -&gt; public</p>
-</li>
-<li><p>配置GitHub的SSH</p>
-<p>settings -&gt; SSH and GPG keys</p>
-</li>
-</ol>
-<h5 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h5><ol>
-<li><p>本地创建文件夹存放博客源码</p>
-</li>
-<li><p>下载安装hexo</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>初始化项目</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo init 项目名称</span><br><span class="line">npm install</span><br><span class="line">hexo s</span><br><span class="line"><span class="meta">#</span> 本地建站成功,打开localhost:4000 测试</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h5 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h5><p>_config.yml</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">title: itdevops</span><br><span class="line">subtitle: DevOps is everything</span><br><span class="line">description: From Zero to the DevOps</span><br><span class="line">author: shaonbean</span><br><span class="line">language: zh-CN</span><br><span class="line">timezone: Asia/Shanghai</span><br><span class="line"># language和timezone 有规范，注意格式</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">		type: git</span><br><span class="line">		repo:https://shaonbean:shaonbeanpassword@github.com/shaonbean/shaonbean.github.io.git</span><br><span class="line">		branch: master</span><br></pre></td></tr></table></figure>
-
-<p>测试本地连接GitHub是否正常：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github</span><br></pre></td></tr></table></figure>
-
-<p>安装git扩展</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-<h5 id="部署项目"><a href="#部署项目" class="headerlink" title="部署项目"></a>部署项目</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo g   # 本地生成博客</span><br><span class="line">hexo d   # 发布到远程</span><br><span class="line"><span class="meta">#</span>注意：当前目录是项目的源码，其部署好的文件在.deploy_git目录下</span><br></pre></td></tr></table></figure>
-
-<h5 id="修改主题"><a href="#修改主题" class="headerlink" title="修改主题"></a>修改主题</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br><span class="line"><span class="meta">#</span>注意：该主题下的配置文件是\themes\next\_config.yml 可在其中配置菜单项 因为默认菜单只显示home和archives</span><br></pre></td></tr></table></figure>
-
-<p>其它主题推荐：<a href="https://www.zhihu.com/question/24422335" target="_blank" rel="noopener">https://www.zhihu.com/question/24422335</a></p>
-<h5 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h5><p>hexo new “文章名”</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/03/生成我的博客/" rel="next" title="生成我的博客">
+                <i class="fa fa-chevron-left"></i> 生成我的博客
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
       
     </footer>
   </div>
@@ -553,10 +414,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -564,6 +426,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -584,8 +450,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -636,6 +511,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Spring-Core-Annotations"><span class="nav-number">1.</span> <span class="nav-text">Spring Core Annotations</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Autowired"><span class="nav-number">1.1.</span> <span class="nav-text">@Autowired</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Constructor-injection"><span class="nav-number">1.1.1.</span> <span class="nav-text">Constructor injection</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Setter-injection"><span class="nav-number">1.1.2.</span> <span class="nav-text">Setter injection:</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Field-injection"><span class="nav-number">1.1.3.</span> <span class="nav-text">Field injection:</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Bean"><span class="nav-number">1.2.</span> <span class="nav-text">@Bean</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Qualifier"><span class="nav-number">1.3.</span> <span class="nav-text">@Qualifier</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Required"><span class="nav-number">1.4.</span> <span class="nav-text">@Required</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Value"><span class="nav-number">1.5.</span> <span class="nav-text">@Value</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Constructor-injection-1"><span class="nav-number">1.5.1.</span> <span class="nav-text">Constructor injection:</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Setter-injection-1"><span class="nav-number">1.5.2.</span> <span class="nav-text">Setter injection:</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Alternatively"><span class="nav-number">1.5.3.</span> <span class="nav-text">Alternatively:</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Field-injection-1"><span class="nav-number">1.5.4.</span> <span class="nav-text">Field injection:</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#DependsOn"><span class="nav-number">1.6.</span> <span class="nav-text">@DependsOn</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -769,6 +660,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
